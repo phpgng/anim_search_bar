@@ -245,7 +245,6 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                 opacity: (toggle == 0) ? 0.0 : 1.0,
                 duration: Duration(milliseconds: 200),
                 child: Container(
-                  color: Colors.black.withOpacity(0.5),
                   padding: const EdgeInsets.only(left: 10),
                   alignment: Alignment.topCenter,
                   width: widget.width / 1.7,
@@ -289,7 +288,7 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                           ? widget.helpTextStyle
                           : TextStyle(
                               color: Color(0xff5B5B5B),
-                              fontSize: 17.0,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500,
                             ),
                       alignLabelWithHint: true,
