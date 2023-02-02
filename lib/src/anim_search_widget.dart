@@ -349,7 +349,7 @@ class _AnimSearchBarState extends State<AnimSearchBar>
 
                         ///if the autoFocus is true, the keyboard will close, automatically
                         setState(() {
-                          if (widget.autoFocus) unfocusKeyboard();
+                          unfocusKeyboard();
                         });
 
                         ///reverse == close
