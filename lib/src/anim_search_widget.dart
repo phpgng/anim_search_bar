@@ -39,6 +39,7 @@ class AnimSearchBar extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final bool boxShadow;
   final Function(String) onSubmitted;
+  final TextStyle? helpTextStyle;
 
   const AnimSearchBar({
     Key? key,
@@ -51,6 +52,7 @@ class AnimSearchBar extends StatefulWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.helpText = "Search...",
+    this.helpTextStyle,
 
     /// choose your custom color
     this.color = Colors.white,
@@ -243,6 +245,7 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                 opacity: (toggle == 0) ? 0.0 : 1.0,
                 duration: Duration(milliseconds: 200),
                 child: Container(
+                  color: Colors.black.withOpacity(0.5),
                   padding: const EdgeInsets.only(left: 10),
                   alignment: Alignment.topCenter,
                   width: widget.width / 1.7,
@@ -282,11 +285,13 @@ class _AnimSearchBarState extends State<AnimSearchBar>
                       isDense: true,
                       floatingLabelBehavior: FloatingLabelBehavior.never,
                       labelText: widget.helpText,
-                      labelStyle: TextStyle(
-                        color: Color(0xff5B5B5B),
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      labelStyle: widget.helpTextStyle != null
+                          ? widget.helpTextStyle
+                          : TextStyle(
+                              color: Color(0xff5B5B5B),
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       alignLabelWithHint: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),

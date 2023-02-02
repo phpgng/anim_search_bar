@@ -38,7 +38,7 @@ class _AppState extends State<App> {
           setState(() {
             textController.clear();
           });
-        },
+        }, onSubmitted: (String ) {  },
       ),
     );
   }
